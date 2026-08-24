@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+[project]
+name = "modelbrief"
+version = "0.2.0"
+description = "Professional reports for already-trained ML and AI models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name="ModelBrief contributors"}]
+dependencies = ["numpy>=1.24", "scikit-learn>=1.3", "matplotlib>=3.7", "reportlab>=4.0"]
+[project.optional-dependencies]
+xgboost=["xgboost>=2.0"]
+lightgbm=["lightgbm>=4.0"]
+catboost=["catboost>=1.2"]
+pytorch=["torch>=2.1", "torchvision>=0.16"]
+tensorflow=["tensorflow>=2.14"]
+vision=["pillow>=10", "torch>=2.1", "torchvision>=0.16"]
+nlp=["transformers>=4.38", "torch>=2.1"]
+ai=["groq>=0.31"]
+dev=["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "mypy>=1.10", "build>=1.2"]
+all=["xgboost>=2.0","lightgbm>=4.0","catboost>=1.2","torch>=2.1","torchvision>=0.16","tensorflow>=2.14","pillow>=10","transformers>=4.38","groq>=0.31"]
+[tool.pytest.ini_options]
+testpaths=["tests"]
+addopts="-q"
+[tool.ruff]
+line-length=120
