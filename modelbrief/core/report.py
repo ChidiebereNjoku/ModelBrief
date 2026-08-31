@@ -11,13 +11,13 @@ class ModelBrief:
  def __init__(self,model,X_train=None,X_val=None,X_test=None,y_train=None,y_val=None,y_test=None,task=None,ai=False,feature_names=None,target_names=None,adapter=None,**options):
   self.context=ReportContext(model,DataSplit(X_train,y_train),DataSplit(X_val,y_val),DataSplit(X_test,y_test),task,feature_names,target_names,options=options)
   self.adapter=adapter or detect_adapter(model,X_train if X_train is not None else X_test); self.ai=ai; self._result=None
-  print(
-    "Selected adapter:",
-    type(self.adapter).__name__,
-    "| Model:",
-    type(model).__module__,
-    type(model).__name__,
-)
+#   print(
+#     "Selected adapter:",
+#     type(self.adapter).__name__,
+#     "| Model:",
+#     type(model).__module__,
+#     type(model).__name__,
+# )
  def _split_analysis(self,name,split,task):
   if split.X is None: return None
   pred=np.asarray(self.adapter.predict(split.X)); out={"samples":len(pred)}
