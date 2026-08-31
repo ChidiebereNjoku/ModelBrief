@@ -48,7 +48,17 @@ def detect_task(model, y=None, requested=None):
     if requested:
         return requested.lower().strip().replace(" ", "_")
 
+    # Older scikit-learn versions expose estimator type through
+    # _estimator_type.
     estimator_type = getattr(model, "_estimator_type", None)
+
+    # Newer scikit-learn versions expose estimator type through
+    # __sklearn_tags__().
+    if estimator_type is None and hasattr(model, "__sklearn_tags__"):
+        try:
+            estimator_type = model.__sklearn_tags__().estimator_type
+        except (AttributeError, TypeError):
+            estimator_type = None
 
     if estimator_type == "classifier":
         return "classification"
