@@ -16,14 +16,14 @@ ModelBrief accepts an **already-trained** model plus any available train, valida
 ModelBrief is an open-source Python library for analysing trained machine-learning models and automatically generating structured reports.
 Reports can include:
 
-Model overview and parameters
-Dataset summary
-Task detection
-Feature importance
-Model performance and evaluation metrics
-Confusion matrix
-Error analysis
-Visualisations
+Model overview and parameters,
+Dataset summary,
+Task detection,
+Feature importance,
+Model performance and evaluation metrics,
+Confusion matrix,
+Error analysis,
+Visualisations,
 Optional AI-generated explanation and recommendations
 
 ## Supported workflows
@@ -154,7 +154,7 @@ Fork, clone, create a branch, install `.[dev]`, add code and tests, run `pytest`
 - **`fix/*`** → Bug fixes
 
 ## Maintainers
-ModelBrief is maintained by data scientist and software developer:
+ModelBrief is maintained by a data scientist and software developers:
 
 
 | Name             | GitHub           | Email                                                         |
