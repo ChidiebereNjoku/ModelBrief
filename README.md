@@ -2,6 +2,13 @@
 
 **Train your model your way. ModelBrief analyses it and turns the results into a complete model report.**
 
+[![PyPI version](https://img.shields.io/pypi/v/modelbrief.svg)](https://pypi.org/project/modelbrief)
+[![Downloads](https://static.pepy.tech/badge/modelbrief)](https://pepy.tech/project/modelbrief)
+[![Python Tests](https://github.com/ChidiebereNjoku/ModelBrief/actions/workflows/tests.yml/badge.svg)](https://github.com/ChidiebereNjoku/ModelBrief/actions) 
+[![Python Version](https://img.shields.io/pypi/pyversions/modelbrief.svg)](https://www.python.org/downloads)
+[![License](https://img.shields.io/pypi/l/modelbrief.svg)]( https://opensource.org/license/Apache-2.0)
+
+
 ModelBrief accepts an **already-trained** model plus any available train, validation, and test data. It never calls `fit`, never retrains the model, and produces console, standalone HTML, and PDF reports.
 
 ## Overview
@@ -45,7 +52,7 @@ ModelBrief(model, X_test=X, task="clustering")
 * A failed optional analysis is recorded as a warning rather than destroying the whole report.
 * HTML is standalone. PDF creation uses ReportLab.
 
-Current version: 0.2.0
+Current version: 0.2.1
 Python: 3.10+
 
 ## Quick start
@@ -64,7 +71,7 @@ report = ModelBrief(
     X_test=X_test, y_test=y_test,
     ai=False,
 )
-report.show()
+print(report.show())
 report.pdf("reports/model.pdf")
 report.html("reports/model.html")
 ```
