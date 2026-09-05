@@ -85,7 +85,7 @@ class ModelBrief:
   except Exception as e: r.warnings.append(f"Visualisation skipped: {e}")
  def show(self):
   from ..output.console import render_console
-  text=render_console(self.analyse()); print(text); return text
+  return render_console(self.analyse())
  def html(self,path="modelbrief_report.html"):
   from ..output.html import render_html; return render_html(self.analyse(),path)
  def pdf(self,path="modelbrief_report.pdf"):
