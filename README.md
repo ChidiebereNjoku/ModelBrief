@@ -131,7 +131,7 @@ export MODELBRIEF_GROQ_MODEL="openai/gpt-oss-20b" # optional
 ```
 ## Install or Update
 Using pip:
-pip install --upgrade modelbrief  # Get the latest features!
+pip install --upgrade modelbrief  # Get the latest features!, if you already have modelbrief installed .
 
 
 ## Run tests:
@@ -154,13 +154,12 @@ Fork, clone, create a branch, install `.[dev]`, add code and tests, run `pytest`
 - **`fix/*`** → Bug fixes
 
 ## Maintainers
-ModelBrief is maintained by a data scientist and software developers:
+ModelBrief is maintained by a data scientist and software developer:
 
 
 | Name             | GitHub           | Email                                                         |
 | ---------------- | ---------------- | ------------------------------------------------------------- |
-| Chidiebere Njoku | @ChidiebereNjoku | [chidexnj@gmail.com](mailto:chidexnj@gmail.com)               |
-| Abayomi Olagunju | @jerryola1       | [https://abayomiolagunju.net/](https://abayomiolagunju.net/)  |
+| Chidiebere Njoku | @ChidiebereNjoku | [chidexnj@gmail.com](mailto:chidexnj@gmail.com)               |  |
 | Micheal Adegoro  | @micheal         | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
 
 
