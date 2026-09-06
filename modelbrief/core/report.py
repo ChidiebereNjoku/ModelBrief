@@ -81,7 +81,7 @@ class ModelBrief:
 
   if self._result is not None and not force: return self._result
 
-  c=self.context; yref=c.train.y if c.train.y is not None else (c.test.y if c.test.y is not None else c.validation.y); task=detect_task(c.model,yref,c.task); r=ReportResult(metadata={"task":task,"library_version":"0.2.0"})
+  c=self.context; yref=c.train.y if c.train.y is not None else (c.test.y if c.test.y is not None else c.validation.y); task=detect_task(c.model,yref,c.task); r=ReportResult(metadata={"task":task,"library_version":"0.2.2"})
 
   r.add("MODEL OVERVIEW",model_overview(c.model,self.adapter,task)); r.add("DATASET",{"train":describe_dataset(c.train.X,c.train.y),"validation":describe_dataset(c.validation.X,c.validation.y),"test":describe_dataset(c.test.X,c.test.y)}); r.add("TASK",{"detected_or_requested":task}); r.add("PARAMETERS",self.adapter.parameters())
 
