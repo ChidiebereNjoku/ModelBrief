@@ -169,6 +169,7 @@ class ModelBrief:
 
   return render_console(self.analyse())
 
+
  def html(self,path="modelbrief_report.html"):
 
   from ..output.html import render_html; return render_html(self.analyse(),path)
