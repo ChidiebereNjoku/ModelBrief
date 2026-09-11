@@ -52,7 +52,7 @@ ModelBrief(model, X_test=X, task="clustering")
 * A failed optional analysis is recorded as a warning rather than destroying the whole report.
 * HTML is standalone. PDF creation uses ReportLab.
 
-Current version: 0.2.1
+Current version: 0.2.2
 Python: 3.10+
 
 ## Quick start
@@ -157,14 +157,20 @@ Fork, clone, create a branch, install `.[dev]`, add code and tests, run `pytest`
 ModelBrief is maintained by a data scientist and software developer:
 
 
-| Name             | GitHub           | Email                                                         |
-| ---------------- | ---------------- | ------------------------------------------------------------- |
-| Chidiebere Njoku | @ChidiebereNjoku | [chidexnj@gmail.com](mailto:chidexnj@gmail.com)               |  |
-| Micheal Adegoro  | @micheal         | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
+| **Name** | **GitHub** | **Email** |
+|---|---|---|
+| [Chidiebere Njoku](https://github.com/ChidiebereNjoku) | [@ChidiebereNjoku](https://github.com/ChidiebereNjoku) | [chidexnj@gmail.com](mailto:chidexnj@gmail.com) |
+| Micheal Adegoro | [@micheal](https://github.com/micheal) | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
 
 
 ##  License
 
 Apache License 2.0
 
+## 💬 Feedback
 
+Have you used ModelBrief? We'd love to hear from you.
+
+Whether you've generated your first report, explored the optional Groq-powered AI explanations and recommendations, or have ideas for future features, your feedback can help shape the project.
+
+👉 [**Share your feedback**](https://docs.google.com/forms/d/e/1FAIpQLScP5I361NIGR3gbKXzLAUVquYkZlvbUf63m-ZShNPngB2n2-w/viewform?usp=publish-editor)
