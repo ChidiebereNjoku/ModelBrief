@@ -121,6 +121,20 @@ class ModelBrief:
 
   self._result=r; return r
 
+ def _compute_drift(self,c,bins=10):
+
+  reference=c.train; comparison=c.test if c.test.X is not None else c.validation
+
+  if reference.X is None or comparison.X is None:
+
+   return {"available":False,"reason":"requires both training data and a validation or test split"}
+
+  try:
+
+   from ..metrics.drift import dataset_drift; return dataset_drift(reference.X,comparison.X,c.feature_names,bins=bins)
+
+  except Exception as e: return {"available":False,"reason":f"{type(e).__name__}: {e}"}
+
  def _errors(self,task,split):
 
   if split.X is None or split.y is None: return {"available":False}
@@ -162,6 +176,44 @@ class ModelBrief:
     from ..visualization.residuals import plot_residuals; self._add_fig(r,plot_residuals(split.y,self.adapter.predict(split.X)),"Residuals")
 
   except Exception as e: r.warnings.append(f"Visualisation skipped: {e}")
+
+ def data_drift(self,bins=10,plot=False):
+
+  """Standalone data drift check between the training split and the
+  validation/test split (train vs. test if both are given, otherwise
+  train vs. validation).
+
+  This is independent of analyse()/show()/html()/pdf() -- it does NOT
+  run or require the main report, and its result is never included in
+  that report's sections or figures. Call it on its own whenever you
+  specifically want a drift check:
+
+      report = ModelBrief(model, X_train=X_train, X_test=X_test)
+      drift = report.data_drift()
+
+  Returns the same shape the drift metric always has:
+      {"available": True, "features": [...], "significant_shift_count": int}
+  or
+      {"available": False, "reason": str}
+  (plus "image_summary" and "note" keys when the input looked like image
+  data -- see modelbrief.metrics.drift for details).
+
+  If plot=True and drift is available, the result also includes a
+  "figure" key: a base64-encoded PNG of the per-feature drift bar chart,
+  so you can render or save it without touching the main report at all.
+  """
+
+  result=self._compute_drift(self.context,bins=bins)
+
+  if plot and result.get("available") and result.get("features"):
+
+   from ..visualization.drift import plot_drift
+
+   fig=plot_drift(result["features"]); buf=io.BytesIO(); fig.savefig(buf,format="png",dpi=130,bbox_inches="tight")
+
+   result={**result,"figure":base64.b64encode(buf.getvalue()).decode()}
+
+  return result
 
  def show(self):
 
