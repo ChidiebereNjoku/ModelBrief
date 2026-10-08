@@ -1,14 +1,22 @@
 """Bar chart of per-feature distribution drift (PSI)."""
 
-import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 
 _COLORS = {"stable": "#4C956C", "moderate_shift": "#E8A33D", "significant_shift": "#D64545"}
 
 
 def plot_drift(features, top_n=20):
-    """Plot per-feature PSI as a horizontal bar chart, most-drifted on top."""
+    """Plot per-feature PSI as a horizontal bar chart, most-drifted on top.
+
+    Builds the figure with matplotlib's object API (``Figure``) rather than
+    ``pyplot``. pyplot picks a GUI backend (Tk, Qt...) when you create a
+    figure, which fails on machines without a working GUI toolkit -- e.g.
+    servers, CI, or a Python install with a broken Tcl. A plain ``Figure``
+    needs no backend to render to PNG, so this works everywhere.
+    """
     items = list(features)[:top_n][::-1]
-    fig, ax = plt.subplots()
+    fig = Figure()
+    ax = fig.subplots()
     ax.barh(
         [f["feature"] for f in items],
         [f["psi"] for f in items],
