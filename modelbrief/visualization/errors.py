@@ -1,0 +1,1 @@
+def largest_errors(y,pred,n=10): return sorted([{"index":i,"actual":a,"predicted":b,"absolute_error":abs(a-b)} for i,(a,b) in enumerate(zip(y,pred))],key=lambda x:x["absolute_error"],reverse=True)[:n]
