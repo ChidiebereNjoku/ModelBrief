@@ -6,7 +6,7 @@
 [![Downloads](https://static.pepy.tech/badge/modelbrief)](https://pepy.tech/project/modelbrief)
 [![Python Tests](https://github.com/ChidiebereNjoku/ModelBrief/actions/workflows/tests.yml/badge.svg)](https://github.com/ChidiebereNjoku/ModelBrief/actions) 
 [![Python Version](https://img.shields.io/pypi/pyversions/modelbrief.svg)](https://www.python.org/downloads)
-[![License](https://img.shields.io/pypi/l/modelbrief.svg)]( https://opensource.org/license/Apache-2.0)
+[![License](https://img.shields.io/pypi/l/modelbrief.svg)](https://opensource.org/license/MIT)
 
 
 ModelBrief accepts an **already-trained** model plus any available train, validation, and test data. It never calls `fit`, never retrains the model, and produces console, standalone HTML, and PDF reports.
@@ -163,9 +163,9 @@ ModelBrief is maintained by a data scientist and software developer:
 | Micheal Adegoro | [@micheal](https://github.com/micheal) | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
 
 
-##  License
+## License
 
-Apache License 2.0
+MIT License. See [LICENSE](LICENSE) for the full text.
 
 ## 💬 Feedback
 
