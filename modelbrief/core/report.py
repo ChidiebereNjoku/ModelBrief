@@ -85,6 +85,10 @@ class ModelBrief:
 
   r.add("MODEL OVERVIEW",model_overview(c.model,self.adapter,task)); r.add("DATASET",{"train":describe_dataset(c.train.X,c.train.y),"validation":describe_dataset(c.validation.X,c.validation.y),"test":describe_dataset(c.test.X,c.test.y)}); r.add("TASK",{"detected_or_requested":task}); r.add("PARAMETERS",self.adapter.parameters())
 
+  # Added Warning Message on the report if the model is not fitted.
+  from ..analysis.model import is_fitted
+  if is_fitted(c.model) is False: r.warnings.insert(0,"The supplied model does not appear to be fitted. ModelBrief never calls fit; fit the model first, then generate the report.")
+
   fi=self.adapter.feature_importance(c.feature_names)
 
   r.add("FEATURE IMPORTANCE",{"available":fi is not None,"ranking":fi[:50] if fi else []})

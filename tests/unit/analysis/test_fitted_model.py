@@ -30,11 +30,11 @@ def test_unfitted_model_reports_false(data):
     assert _fitted_flag(report) is False
 
 
-# # Test Warning For Unfitted Model: This test is commented out because the warning is not currently being generated in the report. The warning mechanism may need to be implemented or fixed in the ModelBrief class.
-# def test_unfitted_model_adds_clear_warning_first(data):
-#     X, y = data
-#     report = ModelBrief(LogisticRegression(), X_test=X, y_test=y, ai=False)
-#     assert WARNING_TEXT in report.result.warnings[0]
+# Test Warning For Unfitted Model: This test is commented out because the warning is not currently being generated in the report. The warning mechanism may need to be implemented or fixed in the ModelBrief class.
+def test_unfitted_model_adds_clear_warning_first(data):
+    X, y = data
+    report = ModelBrief(LogisticRegression(), X_test=X, y_test=y, ai=False)
+    assert WARNING_TEXT in report.result.warnings[0]
 
 
 def test_unfitted_pipeline_reports_false(data):
@@ -43,7 +43,6 @@ def test_unfitted_pipeline_reports_false(data):
     assert _fitted_flag(ModelBrief(pipe, X_test=X, y_test=y, ai=False)) is False
 
 
-# # Test Fitted Model Reports True Without Warning: This test is commented out because the warning is not currently being generated in the report. The warning mechanism may need to be implemented or fixed in the ModelBrief class.
 def test_fitted_model_reports_true_without_warning(data):
     X, y = data
     model = LogisticRegression().fit(X, y)
@@ -69,11 +68,11 @@ def test_unknown_state_is_none_not_true():
     report = ModelBrief(model, adapter=SklearnAdapter(model), X_test=np.zeros((3, 2)), ai=False)
     assert _fitted_flag(report) is None
 
-# # Test Fitted Model Reports True Without Warning: This test is commented out because the warning is not currently being generated in the report. The warning mechanism may need to be implemented or fixed in the ModelBrief class.
-# def test_report_still_renders_for_unfitted_model(data, tmp_path):
-#     """Design guarantee: a problem becomes a warning, the report is still produced."""
-#     X, y = data
-#     report = ModelBrief(LogisticRegression(), X_test=X, y_test=y, ai=False)
-#     assert WARNING_TEXT in report.show()
-#     report.html(str(tmp_path / "r.html"))
-#     assert (tmp_path / "r.html").exists()
+# Test Fitted Model Reports True Without Warning: This test is commented out because the warning is not currently being generated in the report. The warning mechanism may need to be implemented or fixed in the ModelBrief class.
+def test_report_still_renders_for_unfitted_model(data, tmp_path):
+    """Design guarantee: a problem becomes a warning, the report is still produced."""
+    X, y = data
+    report = ModelBrief(LogisticRegression(), X_test=X, y_test=y, ai=False)
+    assert WARNING_TEXT in report.show()
+    report.html(str(tmp_path / "r.html"))
+    assert (tmp_path / "r.html").exists()
