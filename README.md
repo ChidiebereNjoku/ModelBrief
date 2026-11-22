@@ -157,10 +157,12 @@ Fork, clone, create a branch, install `.[dev]`, add code and tests, run `pytest`
 ModelBrief is maintained by a data scientist and software developer:
 
 
+
 | **Name** | **GitHub** | **Email** |
 |---|---|---|
 | [Chidiebere Njoku](https://github.com/ChidiebereNjoku) | [@ChidiebereNjoku](https://github.com/ChidiebereNjoku) | [chidexnj@gmail.com](mailto:chidexnj@gmail.com) |
-| Micheal Adegoro | [@micheal](https://github.com/micheal) | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
+| [Micheal Adegoro](https://github.com/micheal) | [@micheal](https://github.com/micheal) | [adegboromicheal@gmail.com](mailto:adegboromicheal@gmail.com) |
+
 
 
 ## License
