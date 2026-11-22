@@ -150,8 +150,8 @@ Fork, clone, create a branch, install `.[dev]`, add code and tests, run `pytest`
 
 - **`main`** → Production-ready code
 - **`dev`** → Active development
-- **`feature/*`** → New features
-- **`fix/*`** → Bug fixes
+- **`feature/`** → New features
+- **`fix/`** → Bug fixes
 
 ## Maintainers
 ModelBrief is maintained by a data scientist and software developer:
