@@ -1,3 +1,5 @@
 # Getting started
 
-See the main README and runnable examples. ModelBrief evaluates supplied trained models and never retrains them. Optional framework dependencies stay isolated behind extras.
+ModelBrief requires Python 3.10 or newer. Install the core package with `pip install modelbrief`, then create reports using an already-trained model and any available test data.
+
+For installation steps, environment setup, editable development installation, examples, and troubleshooting, see the root [Getting Started.md](../Getting%20Started.md) guide and follow the instructions.
