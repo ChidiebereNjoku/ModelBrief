@@ -124,3 +124,8 @@ AI output can be incomplete or inaccurate. It should not replace validation by a
 The model guidance is generated from the supplied report summary rather than from an independent audit. It does not retrain or change the model, and a recommendation does not prove that making the suggested change will improve it.
 
 Review findings and recommendations alongside the underlying metrics, dataset assumptions, and report warnings. If an external provider is unavailable or the API configuration is invalid, normal report generation is affected only when `ai=True`; keep AI disabled for a local-only report.
+
+If the AI dependency or API key is missing, the core report should remain available.
+Optional AI failures should be treated as optional warnings rather than a reason to discard all normal report results.
+
+
